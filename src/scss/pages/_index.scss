@@ -1,0 +1,255 @@
+.hero {
+  &__img {
+    margin-right: -15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    overflow: hidden;
+
+    @include d(1500) {
+      margin-right: 0;
+    }
+  }
+
+  &__content {
+    margin-left: -15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px 20px 100px;
+    background-color: $greyBg;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow: hidden;
+  }
+
+  &-list {
+    margin: 27px 0 53px 0;
+    max-width: 560px;
+
+    &__item {
+      padding-left: 63px;
+      position: relative;
+      font-size: 24px;
+      line-height: 1.417em;
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 38px;
+      display: inline-block;
+    }
+  }
+}
+
+.subtitle {
+  font-size: 30px;
+  line-height: 1.2em;
+  margin-bottom: 30px;
+}
+
+.how-it-works {
+  padding: 127px 0 89px 0;
+
+  &__content {
+    padding-top: 107px;
+  }
+
+  &__round {
+    margin: 80px 73px;
+  }
+
+  &__square {
+    margin: 154px 114px;
+  }
+
+  &__btn {
+    margin-top: 30px;
+  }
+}
+
+.list {
+  margin: 10px 0;
+
+  &__item {
+    position: relative;
+    padding-left: 27px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: 3px solid $blueDark;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 14px;
+      left: 0;
+    }
+
+    span {
+      color: $primary;
+      font-style: italic;
+    }
+  }
+}
+
+.deals {
+  padding: 76px 0 150px 0;
+  background-image: linear-gradient(76.17deg, $primaryLight -15.91%, $blue 109.36%);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  &::before {
+    max-width: 1300px;
+    width: 47vw;
+    top: 20px;
+    left: 0;
+    background-image: url(../img/decor1.svg);
+    opacity: .2;
+  }
+
+  &::after {
+    max-width: 780px;
+    width: 41vw;
+    top: 0;
+    right: 0;
+    background-image: url(../img/decor2.svg);
+    opacity: 0.3;
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 36px;
+  }
+
+  &__row {
+    display: flex;
+    margin: 0 -18px;
+  }
+
+  &__col {
+    flex: 0 0 20%;
+    padding: 0 18px;
+  }
+}
+
+.deals-card {
+  position: relative;
+  background-color: $white;
+  border-radius: 6px;
+  padding: 80px 40px 25px 40px;
+  box-shadow: 6px 8px 25px 5px rgba(0, 0, 0, 0.05);
+
+  &_discount {
+    &::before {
+      content: attr(data-discount);
+      width: 72px;
+      height: 72px;
+      background-color: $primary;
+      border-radius: 50%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 20px;
+      right: 20px;
+      color: $white;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.2em;
+      z-index: 2;
+    }
+
+    .price-old {
+      display: inline-block;
+    }
+  }
+
+  &__img {
+    height: 246px;
+    position: relative;
+    margin-bottom: 17px;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__title {
+    font-size: 26px;
+    line-height: 1.192em;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__footer {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 24px;
+
+    &::before {
+      content: "";
+      width: calc(100% + 40px);
+      height: 1px;
+      background-color: $greyBg;
+      position: absolute;
+      top: 0;
+      left: -40px;
+    }
+  }
+}
+
+.price {
+  font-size: 26px;
+  line-height: 1.192em;
+  color: $blue;
+
+  &-old {
+    font-size: 20px;
+    line-height: 1.2em;
+    margin-right: 30px;
+    position: relative;
+    color: $greyDark;
+    display: none;
+
+    &::before {
+      content: "";
+      width: calc(100% + 10px);
+      height: 2px;
+      background-color: $blue;
+      position: absolute;
+      left: -5px;
+      top: 50%;
+    }
+  }
+}
