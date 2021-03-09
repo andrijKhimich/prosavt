@@ -2,7 +2,7 @@ const siteWrapper = $('#wrapper');
 const headerMenu = $("#headerMenu");
 const humburger = $("#burger");
 const testimonialsSlider = $("#testimonialsSlider");
-
+let windowWidth = $(window).width();
 
 // project functions
 
@@ -142,7 +142,36 @@ $(document).ready(function () {
 
   // });
 
+
+
   // TOGGLE MAIN MENU ON MOBILE DEVICES //
+
+  // TOGGLE MAIN MENU //
+  $(document).on('click', '.nav-menu__item-icon .nav-menu__link', function (e) {
+
+    if (windowWidth < 991) {
+
+      e.preventDefault();
+
+      let link = $(this);
+      let liItem = link.parent('.nav-menu__item');
+      let subList = liItem.children('.submenu');
+
+      if (liItem.hasClass('active')) {
+
+        liItem.removeClass('active');
+        subList.slideUp();
+
+      } else {
+
+        liItem.addClass('active');
+        subList.slideDown();
+
+      }
+
+    }
+
+  });
   humburger.click(function () {
     if ($(this).hasClass('open')) {
       closeMenu();

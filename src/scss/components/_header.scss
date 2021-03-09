@@ -130,6 +130,8 @@
 
         @include d(991) {
           margin-right: 0;
+          display: block;
+          width: 100%;
         }
       }
 
@@ -153,10 +155,21 @@
             top: 22px;
             right: -3px;
           }
+
+          @include d(991) {
+            top: 19px;
+            right: 30px;
+          }
+        }
+
+        &.active {
+          &::before {
+            transform: scale(-1);
+          }
         }
       }
 
-      @include rh(992) {
+      @include m(992) {
         &:hover {
           .nav-menu__link {
             color: $primary;
@@ -175,6 +188,7 @@
           }
         }
       }
+
     }
 
     &__link {
@@ -256,6 +270,26 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity $hover-duration $timing, transform $hover-duration $timing, ;
+
+  @include d(1199) {
+    font-size: 16px;
+  }
+
+  @include d(575) {
+    font-size: 14px;
+  }
+
+  @include d(991) {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0 0 0 40px;
+    display: none;
+    pointer-events: auto;
+  }
 
   &__item {
     margin-bottom: 5px;

@@ -625,6 +625,24 @@
       background-color: #F8F9FA;
       border-radius: 12px;
 
+      &::before {
+        content: "";
+        width: 35px;
+        height: 28px;
+        background-image: url(../img/quote.svg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+
+        @include d(991) {
+          
+          left: 10px;
+        }
+      }
+
       @include d(991) {
         padding: 30px 25px 30px 55px;
       }
