@@ -4,9 +4,22 @@
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     overflow: hidden;
+    height: 100%;
 
-    @include d(1500) {
+    @include d(767) {
       margin-right: 0;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 7px;
+    }
+
+    picture {
+      height: 100%;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -16,23 +29,58 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    width: 100%;
     padding: 20px 20px 20px 100px;
     background-color: $greyBg;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     overflow: hidden;
+
+    @include d(1500) {
+      padding: 15px 15px 15px 40px;
+    }
+
+    @include d(767) {
+      margin-left: 0;
+
+      @include d(767) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 7px;
+        border-bottom-left-radius: 7px;
+        padding: 35px 20px;
+      }
+    }
   }
 
   &-list {
     margin: 27px 0 53px 0;
     max-width: 560px;
 
+    @include d(1500) {
+      margin: 20px 0 40px 0;
+    }
+
     &__item {
       padding-left: 63px;
       position: relative;
       font-size: 24px;
       line-height: 1.417em;
+
+      @include d(1500) {
+        padding-left: 47px;
+        font-size: 20px;
+      }
+
+      @include d(1199) {
+        font-size: 18px;
+      }
+
+      @include d(991) {
+        font-size: 17px;
+      }
+
+      @include d(575) {
+        font-size: 14px;
+      }
 
       &:not(:last-child) {
         margin-bottom: 12px;
@@ -45,7 +93,16 @@
       left: 0;
       width: 38px;
       display: inline-block;
+
+      @include d(1500) {
+        width: 28px;
+        top: 6px;
+      }
     }
+  }
+
+  &__btn {
+    align-self: flex-start;
   }
 }
 
@@ -53,13 +110,53 @@
   font-size: 30px;
   line-height: 1.2em;
   margin-bottom: 30px;
+
+  @include d(1500) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  @include d(991) {
+    font-size: 18px;
+  }
+
+  @include d(767) {
+    font-size: 16px;
+  }
+
+  @include d(575) {
+    font-size: 12px;
+  }
 }
 
 .how-it-works {
   padding: 127px 0 89px 0;
 
+  @include d(1500) {
+    padding: 80px 0;
+  }
+
+  @include d(1199) {
+    padding: 60px 0;
+  }
+
+  &__title {
+    @include d(991) {
+      margin-bottom: 50px;
+    }
+  }
+
   &__content {
     padding-top: 107px;
+
+    @include d(1199) {
+      padding-top: 60px;
+    }
+
+    @include d(991) {
+      padding-top: 40px;
+    }
+
   }
 
   &__round {
@@ -67,7 +164,20 @@
   }
 
   &__square {
-    margin: 154px 114px;
+    margin: 154px 0 0 110px;
+
+    @include d(1500) {
+      margin: 100px 0 0 60px;
+
+    }
+
+    @include d(1199) {
+      margin: 100px 0 0 0;
+    }
+
+    @include d(991) {
+      margin: 60px auto 0;
+    }
   }
 
   &__btn {
@@ -109,6 +219,10 @@
   padding: 76px 0 150px 0;
   background-image: linear-gradient(76.17deg, $primaryLight -15.91%, $blue 109.36%);
 
+  @include d(1500) {
+    padding: 40px 0 80px 0;
+  }
+
   &::before,
   &::after {
     content: "";
@@ -138,6 +252,16 @@
     opacity: 0.3;
   }
 
+  &__btn {
+    display: none;
+
+    @include d(575) {
+      display: block;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+  }
+
   &__title {
     color: $white;
     margin-bottom: 36px;
@@ -146,11 +270,41 @@
   &__row {
     display: flex;
     margin: 0 -18px;
+
+    @include d(1500) {
+      margin: 0 -10px;
+    }
+
+    @include d(1199) {
+      flex-wrap: wrap;
+    }
   }
 
   &__col {
     flex: 0 0 20%;
     padding: 0 18px;
+
+    @include d(1500) {
+      padding: 0 10px;
+    }
+
+    @include d(1199) {
+      flex: 0 0 33.333%;
+    }
+
+    @include d(767) {
+      flex: 0 0 50%;
+    }
+
+    @include d(575) {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+
+      &:nth-child(n+3) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -160,6 +314,16 @@
   border-radius: 6px;
   padding: 80px 40px 25px 40px;
   box-shadow: 6px 8px 25px 5px rgba(0, 0, 0, 0.05);
+
+  @include d(1500) {
+    padding: 25px 20px;
+  }
+
+  @include d(1199) {
+    margin-bottom: 30px;
+  }
+
+
 
   &_discount {
     &::before {
@@ -180,6 +344,14 @@
       font-weight: 400;
       line-height: 1.2em;
       z-index: 2;
+
+      @include d(575) {
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+        top: 10px;
+        right: 10px;
+      }
     }
 
     .price-old {
@@ -208,6 +380,11 @@
     line-height: 1.192em;
     text-align: center;
     margin-bottom: 24px;
+
+    @include d(1500) {
+      font-size: 20px;
+      margin-bottom: 26px;
+    }
   }
 
   &__footer {
@@ -217,6 +394,10 @@
     justify-content: center;
     padding-top: 24px;
 
+    @include d(1500) {
+      padding-top: 16px;
+    }
+
     &::before {
       content: "";
       width: calc(100% + 40px);
@@ -225,6 +406,10 @@
       position: absolute;
       top: 0;
       left: -40px;
+
+      @include d(1500) {
+        left: -20px;
+      }
     }
   }
 }
@@ -233,6 +418,22 @@
   font-size: 26px;
   line-height: 1.192em;
   color: $blue;
+
+  @include d(1500) {
+    font-size: 22px;
+  }
+
+  @include d(1500) {
+    font-size: 22px;
+  }
+
+  @include d(1199) {
+    font-size: 18px;
+  }
+
+  @include d(575) {
+    font-size: 16px;
+  }
 
   &-old {
     font-size: 20px;
@@ -250,6 +451,369 @@
       position: absolute;
       left: -5px;
       top: 50%;
+    }
+  }
+}
+
+.shoper {
+  background-color: $greyBg;
+  padding: 132px 0 150px;
+
+  @include d(1500) {
+    padding: 80px 0;
+  }
+
+  &-row {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1630px;
+
+    @include d(991) {
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-col {
+    padding: 0 40px;
+    flex: 0 0 33.3333%;
+
+    @include d(1199) {
+      padding: 0 10px;
+    }
+
+    @include d(991) {
+      flex: 0 0 320px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 34px;
+
+    @include d(1199) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 40px;
+    right: 35px;
+
+    @include d(1500) {
+      bottom: 20px;
+      right: 15px;
+    }
+  }
+
+  &-card {
+    padding: 10px 48px 75px 40px;
+    position: relative;
+    height: 100%;
+
+    @include d(1500) {
+      padding: 10px 20px 50px 20px;
+
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 408px;
+      background-color: $white;
+      border-radius: 6px;
+      box-shadow: 6px 8px 25px 5px rgba(0, 0, 0, 0.05);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+
+      @include d(575) {
+        height: 280px;
+      }
+    }
+
+    &__img {
+      position: relative;
+      margin: 0 -25px 44px -25px;
+      height: 250px;
+
+      @include d(1199) {
+        margin: 0 -10px 14px 010px;
+        height: 200px;
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__title {
+      margin-bottom: 14px;
+      font-size: 26px;
+      line-height: 1.192em;
+      margin-right: 80px;
+      position: relative;
+
+      @include d(1500) {
+        margin-right: 0;
+
+      }
+    }
+
+    &__content {
+      padding-left: 20px;
+      position: relative;
+      font-size: 18px;
+
+      @include d(1500) {
+        padding-left: 10px;
+      }
+
+      &::before {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: $greyBg;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+
+.testimonials {
+  padding: 134px 0 92px 0;
+
+  @include d(1500) {
+    padding: 80px 0;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__wrapper {
+    max-width: 1710px;
+    margin: 0 auto;
+  }
+
+  &-slider {
+    margin: 0 -12px;
+
+    .slick-list {
+      padding-bottom: 40px;
+    }
+
+    &__col {
+      padding: 0 24px;
+      // flex: 0 0 33.333%;
+    }
+
+    &__item {
+      padding: 32px 40px 30px 105px;
+      position: relative;
+      background-color: #F8F9FA;
+      border-radius: 12px;
+
+      @include d(991) {
+        padding: 30px 25px 30px 55px;
+      }
+    }
+
+    &__content {
+      font-size: 18px;
+      margin-bottom: 40px;
+
+      @include d(991) {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      @include d(575) {
+        font-size: 14px;
+      }
+    }
+
+    &__author {
+      font-size: 26px;
+
+      @include d(1500) {
+        font-size: 22px;
+      }
+
+      @include d(1199) {
+        font-size: 20px;
+      }
+
+      @include d(991) {
+        font-size: 16px;
+      }
+
+      @include d(575) {
+        font-size: 16px;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 60px 10px;
+
+      @include d(1500) {
+        margin: 40px 10px;
+      }
+
+      @include d(767) {
+        margin: 20px 10px;
+      }
+    }
+  }
+}
+
+.triangle {
+  position: relative;
+  background-color: #F8F9FA;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 30%;
+  transform: rotate(-90deg) skewX(-30deg) scale(1, .866);
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 30%;
+
+  }
+
+  &::before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
+  }
+
+  &::after {
+    transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+  }
+}
+
+.slider-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: background-color $hover-duration $timing;
+
+  @include rh(992) {
+    &:hover {
+      background-color: $primary;
+
+    }
+  }
+}
+
+.slider-arrow {
+  fill: $black;
+  transition: fill $hover-duration $timing;
+
+  @include rh(992) {
+    &:hover {
+      fill: $white;
+    }
+  }
+}
+
+.cta {
+  padding: 129px 0 140px;
+  background-image: linear-gradient(76.17deg, $blue -15.91%, $primaryLight 109.36%);
+
+  @include d(1500) {
+    padding: 80px 0;
+  }
+
+  @include d(575) {
+    padding: 72px 0 50px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  &::before {
+    max-width: 1300px;
+    width: 47vw;
+    top: 0;
+    left: 0;
+    background-image: url(../img/decor3.svg);
+    opacity: .2;
+  }
+
+  &::after {
+    max-width: 780px;
+    width: 41vw;
+    top: 0;
+    right: 0;
+    background-image: url(../img/decor4.svg);
+    opacity: 0.5;
+  }
+
+  &__title {
+    margin-bottom: 23px;
+  }
+
+  &__content {
+    text-align: center;
+    color: $white;
+    max-width: 700px;
+    margin: 0 auto;
+
+    p {
+      margin-bottom: 12px;
+      font-size: 26px;
+
+      @include d(575) {
+        font-size: 18px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 44px;
+      }
+    }
+  }
+
+  &__btn {
+    @include rh(992) {
+      &:hover {
+        background-color: $white;
+        border-color: $white;
+      }
+
     }
   }
 }

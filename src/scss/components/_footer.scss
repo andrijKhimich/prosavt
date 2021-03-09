@@ -1,1 +1,149 @@
 // footer styles
+.footer {
+  padding-top: 117px;
+  background-color: $footerBg;
+  color: $white;
+
+  @include d(1199) {
+    padding-top: 80px;
+  }
+
+  @include d(991) {
+    padding-top: 60px;
+  }
+
+  &-nav {
+    max-width: 390px;
+  }
+
+  &-menu {
+    column-count: 2;
+    column-gap: 210px;
+
+    @include d(757) {
+      column-gap: 130px;
+    }
+
+    .btn-login {
+      color: $white;
+
+      @include d(991) {
+        margin: 0;
+      }
+    }
+
+    &__link {
+      margin-bottom: 10px;
+      transition: color $hover-duration $timing;
+
+      @include rh(992) {
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -15px 0 85px;
+
+    @include d(1500) {
+      margin: 0 -15px;
+    }
+
+    @include d(991) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__box {
+    padding: 0 15px;
+
+    @include d(991) {
+      margin-bottom: 40px;
+    }
+
+    @include d(575) {
+      flex: 0 0 100%;
+    }
+
+    p {
+      font-size: 18px;
+
+      @include d(767) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-social {
+    margin: 33px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include d(767) {
+      max-width: 100%;
+      justify-content: space-between;
+    }
+
+    &__item {
+
+      &:not(:last-child) {
+        margin-right: 50px;
+
+        @include d(767) {
+          margin: 0;
+        }
+      }
+    }
+
+    &__link {
+      @include rh(992) {
+        &:hover {
+          .svg-social {
+            fill: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 14px 0;
+
+
+    @include d(575) {
+      flex-direction: column-reverse;
+    }
+
+    p {
+      color: $grey;
+
+      @include d(575) {
+        margin-top: 10px;
+      }
+    }
+
+    a {
+      color: $primary;
+    }
+  }
+}
+
+.svg-social {
+  width: 16px;
+  height: 16px;
+  fill: $grey;
+  transition: fill $hover-duration $timing;
+}

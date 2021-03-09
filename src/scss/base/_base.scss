@@ -32,6 +32,10 @@ body {
     font-size: 16px;
   }
 
+  @include d(575) {
+    font-size: 14px;
+  }
+
   //style default scrollbar
   &::-webkit-scrollbar {
     width: 6px;
@@ -68,25 +72,95 @@ h6 {
 h1 {
   font-size: 53px;
   margin: 20px 0;
+
+  @include d(1500) {
+    font-size: 38px;
+    margin: 10px 0;
+  }
+
+  @include d(1199) {
+    font-size: 33px;
+  }
+
+  @include d(575) {
+    font-size: 23px;
+    font-weight: 400;
+  }
 }
 
 h2 {
   font-size: 66px;
   font-weight: 400;
+
+  @include d(1500) {
+    font-size: 60px;
+  }
+
+  @include d(1199) {
+    font-size: 53px;
+  }
+
+  @include d(991) {
+    font-size: 43px;
+  }
+
+  @include d(575) {
+    font-size: 33px;
+    font-weight: 400;
+  }
 }
 
 h3 {
   font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 30px;
+
+  @include d(1500) {
+    font-size: 30px;
+  }
+
+  @include d(768) {
+    font-size: 26px;
+  }
+
+  @include d(575) {
+    font-size: 23px;
+  }
 }
 
 h4 {
   font-size: 36px;
   font-weight: 400;
   margin: 10px 0;
+
+  @include d(992) {
+    font-size: 30px;
+  }
+
+  @include d(768) {
+    font-size: 26px;
+  }
+
+  @include d(575) {
+    font-size: 23px;
+  }
 }
 
 h5 {
-  font-size: 22px;
+  font-size: 26px;
+  font-weight: 400;
+
+  @include d(992) {
+    font-size: 22px;
+  }
+
+  @include d(768) {
+    font-size: 20px;
+  }
+
+  @include d(575) {
+    font-size: 18px;
+  }
 }
 
 h6 {
@@ -273,6 +347,11 @@ textarea {
   height: 100%;
 }
 
+address {
+  font-style: normal;
+
+}
+
 .main-wrapper {
   position: relative;
   overflow: hidden;
@@ -285,6 +364,10 @@ textarea {
 
   @include d(1440) {
     padding-top: 96px;
+  }
+
+  @include d(1199) {
+    padding-top: 85px;
   }
 }
 
@@ -307,54 +390,82 @@ textarea {
   border: none;
   background-color: transparent;
   text-align: center;
+  color: $white;
+  white-space: nowrap;
   font-size: 20px;
   font-weight: 500;
   border-radius: 3px;
   border: 2px solid transparent;
-  padding: 12px 58px;
   transition: color $hover-duration linear, background-color $hover-duration linear, border-color $hover-duration linear;
 
   @include d(1500) {
     font-size: 18px;
-    padding: 8px 40px;
   }
 
-  @include d(1199) {
-    font-size: 16px;
-    padding: 5px 20px;
-  }
 
-  &-primary {
+  &-header {
+    padding: 12px 58px;
     background-color: $primaryDark;
-    color: $white;
+
+    @include d(1500) {
+      padding: 8px 40px;
+    }
+
+    @include d(1199) {
+      padding: 5px 20px;
+    }
 
     @include rh(992) {
       &:hover {
-        color: $black;
-        background-color: $white;
+        color: $primaryDark;
+        background-color: transparent;
         border-color: $primaryDark;
       }
     }
   }
 
-  &-arrow {
-    padding: 18px 58px;
+
+
+  &-primary {
     background-color: $primary;
     color: $white;
-    width: 474px;
-    text-align: left;
-    position: relative;
+    padding: 19px 59px;
+
+    @include d(1500) {
+      padding: 12px 30px;
+    }
+
+    @include d(1199) {
+      padding: 11px 52px;
+    }
 
     @include rh(992) {
       &:hover {
-        color: $black;
+        color: $primary;
         background-color: transparent;
         border-color: $primary;
+      }
+    }
+  }
 
-        .svg-arrow {
-          fill: $primary;
-          transform: translate(15px, -50%)
-        }
+  &-white {
+    background-color: transparent;
+    color: $white;
+    padding: 19px 59px;
+    border-color: $white;
+
+    @include d(1500) {
+      padding: 12px 30px;
+    }
+
+    @include d(1199) {
+      padding: 11px 52px;
+    }
+
+    @include rh(992) {
+      &:hover {
+        color: $primary;
+        background-color: $white;
       }
     }
   }
@@ -371,6 +482,14 @@ textarea {
         border-color: $primaryDark;
       }
     }
+
+    @include d(991) {
+      padding: 14px 28px;
+    }
+
+    @include d(767) {
+      padding: 12px 24px;
+    }
   }
 }
 
@@ -378,6 +497,7 @@ textarea {
   display: flex;
   align-items: center;
   margin-right: 12px;
+  color: $black;
 
   @include rh(992) {
     &:hover {
@@ -385,9 +505,67 @@ textarea {
     }
   }
 
+  @include d(991) {
+    margin-right: 0;
+    margin-left: 12px;
+  }
+
   img {
     width: 16px;
     margin-right: 14px;
+  }
+}
+
+.btn-more {
+  position: relative;
+  color: $primary;
+  font-size: 22px;
+  padding-right: 38px;
+
+  @include d(1500) {
+    font-size: 18px;
+  }
+
+  @include d(1166) {
+    font-size: 16px;
+  }
+}
+
+.plus {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 0;
+  top: 6px;
+
+  @include d(1500) {
+    width: 20px;
+    height: 20px;
+  }
+
+  &::before,
+  &:after {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background-color: $primary;
+    position: absolute;
+
+    @include d(1500) {
+      width: 20px;
+    }
+
+  }
+
+  &::before {
+    top: 50%;
+    left: 0;
+  }
+
+  &::after {
+    top: 50%;
+    left: 0;
+    transform: rotate(90deg);
   }
 }
 
@@ -409,6 +587,26 @@ textarea {
   border-radius: 50%;
   position: relative;
 
+  @include d(1500) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @include d(991) {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  @include d(575) {
+    width: 183px;
+    height: 183px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
   &::before,
   &:after {
     content: "";
@@ -424,6 +622,29 @@ textarea {
     border: 2px solid $primary;
     left: 0;
     top: -40px;
+
+    @include d(1500) {
+      width: 440px;
+      height: 440px;
+    }
+
+    @include d(1199) {
+      width: 400px;
+      height: 400px;
+    }
+
+    @include d(991) {
+      width: 320px;
+      height: 320px;
+      top: -10px;
+      left: auto;
+      right: 20px;
+    }
+
+    @include d(575) {
+      width: 199px;
+      height: 199px
+    }
   }
 
   &::after {
@@ -432,6 +653,31 @@ textarea {
     border: 2px solid $blueDark;
     left: -85px;
     top: -64px;
+
+    @include d(1500) {
+      width: 460px;
+      height: 460px;
+    }
+
+    @include d(1199) {
+      width: 400px;
+      height: 400px;
+      top: -40px;
+      left: -40px;
+    }
+
+    @include d(991) {
+      width: 320px;
+      height: 320px;
+      top: -20px;
+      left: auto;
+      right: 40px;
+    }
+
+    @include d(575) {
+      width: 176px;
+      height: 176px
+    }
   }
 
   img {
@@ -440,9 +686,17 @@ textarea {
 }
 
 .square-img {
-  width: 592px;
+  max-width: 592px;
   border-radius: 3px;
   position: relative;
+
+  @include d(991) {
+    max-width: 320px;
+  }
+
+  @include d(575) {
+    width: 233px;
+  }
 
   &::before,
   &:after {
@@ -458,6 +712,31 @@ textarea {
     border: 2px solid $primary;
     left: -85px;
     top: -17px;
+
+    @include d(1500) {
+      width: 500px;
+      height: 540px;
+    }
+
+    @include d(1199) {
+      width: 400px;
+      height: 440px;
+      top: -40px;
+      left: -40px;
+    }
+
+    @include d(991) {
+      width: 300px;
+      height: 300px;
+    }
+
+    @include d(575) {
+      width: 275px;
+      height: 250px;
+      left: auto;
+      right: -10px;
+      top: -10px;
+    }
   }
 
   &::after {
@@ -466,6 +745,31 @@ textarea {
     border: 2px solid $blueDark;
     left: -65px;
     top: 19px;
+
+    @include d(1500) {
+      width: 500px;
+      height: 540px;
+    }
+
+    @include d(1199) {
+      width: 400px;
+      height: 440px;
+      top: -20px;
+      left: -20px;
+    }
+
+    @include d(991) {
+      width: 300px;
+      height: 300px;
+    }
+
+    @include d(575) {
+      width: 248px;
+      height: 220px;
+      left: auto;
+      right: 10px;
+      top: 10px;
+    }
   }
 
   img {
