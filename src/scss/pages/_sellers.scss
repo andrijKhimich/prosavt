@@ -480,10 +480,11 @@
     }
 
     &__img {
-      max-width: 70px;
+      width: 70px;
       margin: 0 auto 30px auto;
+      position: relative;
 
-      @include d(575) {
+      @include d(991) {
         max-width: 50px;
       }
     }
