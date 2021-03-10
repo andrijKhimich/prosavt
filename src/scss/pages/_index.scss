@@ -130,7 +130,7 @@
 }
 
 .how-it-works {
-  padding: 127px 0 89px 0;
+  padding: 80px 0 89px 0;
 
   @include d(1500) {
     padding: 80px 0;
@@ -148,6 +148,7 @@
 
   &__content {
     padding-top: 107px;
+    max-width: 560px;
 
     @include d(1199) {
       padding-top: 60px;
@@ -155,6 +156,8 @@
 
     @include d(991) {
       padding-top: 40px;
+      max-width: 100%;
+      margin-bottom: 40px;
     }
 
   }
@@ -323,8 +326,6 @@
     margin-bottom: 30px;
   }
 
-
-
   &_discount {
     &::before {
       content: attr(data-discount);
@@ -345,7 +346,7 @@
       line-height: 1.2em;
       z-index: 2;
 
-      @include d(575) {
+      @include d(1440) {
         width: 60px;
         height: 60px;
         font-size: 14px;
@@ -364,13 +365,17 @@
     position: relative;
     margin-bottom: 17px;
 
+    @include d(1500) {
+      margin-bottom: 5px;
+    }
+
     img {
       position: absolute;
       object-fit: cover;
       top: 50%;
       left: 50%;
+      max-width: 100%;
       height: 100%;
-      width: 100%;
       transform: translate(-50%, -50%);
     }
   }
@@ -383,7 +388,7 @@
 
     @include d(1500) {
       font-size: 20px;
-      margin-bottom: 26px;
+      margin-bottom: 10px;
     }
   }
 
@@ -395,7 +400,7 @@
     padding-top: 24px;
 
     @include d(1500) {
-      padding-top: 16px;
+      padding-top: 10px;
     }
 
     &::before {
@@ -457,7 +462,7 @@
 
 .shoper {
   background-color: $greyBg;
-  padding: 132px 0 150px;
+  padding: 100px 0 100px;
 
   @include d(1500) {
     padding: 80px 0;
@@ -513,7 +518,6 @@
 
     @include d(1500) {
       padding: 10px 20px 50px 20px;
-
     }
 
     &::before {
@@ -538,8 +542,13 @@
       margin: 0 -25px 44px -25px;
       height: 250px;
 
+      @include d(1500) {
+        margin-bottom: 10px;
+
+      }
+
       @include d(1199) {
-        margin: 0 -10px 14px 010px;
+        margin: 0 -10px 14px 10px;
         height: 200px;
       }
 
@@ -564,7 +573,7 @@
 
       @include d(1500) {
         margin-right: 0;
-
+        font-size: 22px;
       }
     }
 
@@ -575,15 +584,16 @@
 
       @include d(1500) {
         padding-left: 10px;
+        font-size: 16px;
       }
 
       &::before {
         content: "";
-        width: 1px;
-        height: 100%;
-        background-color: $greyBg;
+        width: 2px;
+        height: 95%;
+        background-color: $blueDark;
         position: absolute;
-        top: 0;
+        top: 4px;
         left: 0;
       }
     }
@@ -592,10 +602,10 @@
 
 
 .testimonials {
-  padding: 134px 0 92px 0;
+  padding: 80px 0 80px 0;
 
   @include d(1500) {
-    padding: 80px 0;
+    padding: 60px 0;
   }
 
   &__title {
@@ -637,10 +647,14 @@
         top: 40px;
         left: 40px;
 
-        @include d(991) {
-          
+        @include d(1500) {
+          top: 30px;
           left: 10px;
         }
+      }
+
+      @include d(1500) {
+        padding: 20px 30px 20px 65px;
       }
 
       @include d(991) {
@@ -652,8 +666,12 @@
       font-size: 18px;
       margin-bottom: 40px;
 
-      @include d(991) {
+      @include d(1500) {
         font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      @include d(991) {
         margin-bottom: 15px;
       }
 
@@ -761,7 +779,7 @@
 }
 
 .cta {
-  padding: 129px 0 140px;
+  padding: 100px 0;
   background-image: linear-gradient(76.17deg, $blue -15.91%, $primaryLight 109.36%);
 
   @include d(1500) {
@@ -811,11 +829,19 @@
     max-width: 700px;
     margin: 0 auto;
 
+    @include d(991) {
+      max-width: 100%;
+    }
+
     p {
       margin-bottom: 12px;
       font-size: 26px;
 
-      @include d(575) {
+      @include d(1500) {
+        font-size: 20px;
+      }
+
+      @include d(1199) {
         font-size: 18px;
       }
 
