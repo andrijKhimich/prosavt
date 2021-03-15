@@ -189,15 +189,6 @@
 }
 
 .section__content {
-  font-size: 22px;
-
-  @include d(1500) {
-    font-size: 16px;
-  }
-
-  @include d(1199) {
-    font-size: 16px;
-  }
 
   p {
     margin-bottom: 20px;
@@ -500,18 +491,6 @@
 
       @include d(991) {
         font-size: 17px;
-      }
-    }
-
-    &__content {
-      font-size: 22px;
-
-      @include d(1500) {
-        font-size: 18px;
-      }
-
-      @include d(991) {
-        font-size: 16px;
       }
     }
   }

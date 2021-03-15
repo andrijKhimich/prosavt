@@ -1,16 +1,8 @@
 // footer styles
 .footer {
-  padding-top: 117px;
+  padding-top: 60px;
   background-color: $footerBg;
   color: $white;
-
-  @include d(1199) {
-    padding-top: 80px;
-  }
-
-  @include d(991) {
-    padding-top: 60px;
-  }
 
   &-nav {
     max-width: 390px;
