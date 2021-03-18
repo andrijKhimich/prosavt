@@ -1,0 +1,156 @@
+.modal {
+  background-image: linear-gradient(76.17deg, #0E4D94 -15.91%, #51C878 109.36%);
+  width: 80%;
+  display: none;
+
+  @include d(767) {
+    width: 90%;
+  }
+
+  &__img {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    padding: 65px 20px 20px 20px;
+
+    @include d(1199) {
+      padding: 20px;
+    }
+
+    @include d(991) {
+      display: none;
+    }
+
+    img {
+      margin-bottom: 10px;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    h2,
+    & .title-2 {
+      margin-bottom: 10px;
+      font-size: 56px;
+
+      @include d(1199) {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    width: 60%;
+    background-color: $white;
+    padding: 114px 140px;
+
+    @include d(1500) {
+      padding: 40px;
+    }
+
+    @include d(991) {
+      width: 100%;
+    }
+
+    .title-4,
+    & h4 {
+      margin-bottom: 60px;
+
+      @include d(1199) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &-row {
+    display: flex;
+  }
+}
+
+.modal-login {
+  width: 60%;
+
+  @include d(767) {
+    width: 80%;
+  }
+}
+
+.modal-form {
+  max-width: 672px;
+
+  @include d(991) {
+    margin: 0 auto;
+  }
+
+  .btn {
+    @include d(991) {
+      display: block;
+      margin-top: 20px;
+    }
+
+    @include d(767) {
+      display: block;
+      width: 100%;
+      margin: 20px auto 0 auto;
+    }
+  }
+}
+
+.form {
+  &-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 -43px;
+
+    @include d(1199) {
+      margin: 0 -20px;
+    }
+
+    .form-box {
+      padding: 0 43px;
+      width: 50%;
+
+      @include d(1199) {
+        padding: 0 20px;
+      }
+
+      @include d(767) {
+        width: 100%;
+      }
+    }
+  }
+
+  &-box {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 44px;
+
+    @include d(991) {
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-input {
+    font-size: 22px;
+    padding: 5px 10px 30px 10px;
+    border-bottom: 1px solid $primary;
+
+    @include d(1199) {
+      padding: 5px 10px 10px 10px;
+    }
+  }
+}
+
+.fancybox-content {
+  padding: 0;
+}

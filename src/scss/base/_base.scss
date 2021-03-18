@@ -313,26 +313,42 @@ input {
 
   &::-webkit-input-placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 22px;
     color: $textColor;
+
+    @include d(1199) {
+      font-size: 16px;
+    }
   }
 
   &::-moz-placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 22px;
     color: $black;
+
+    @include d(1199) {
+      font-size: 16px;
+    }
   }
 
   &:-ms-input-placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 22px;
     color: $black;
+
+    @include d(1199) {
+      font-size: 16px;
+    }
   }
 
   &::placeholder {
     font-family: inherit;
-    font-size: 16px;
+    font-size: 22px;
     color: $black;
+
+    @include d(1199) {
+      font-size: 16px;
+    }
   }
 }
 
@@ -497,7 +513,7 @@ address {
 
   @include rh(992) {
     &:hover {
-      border-color: $primary;
+      color: $primary;
     }
   }
 
@@ -734,7 +750,7 @@ address {
 
     @include d(575) {
       width: 275px;
-      height: 250px;
+      height: 230px;
       left: auto;
       right: -10px;
       top: -10px;
@@ -769,7 +785,7 @@ address {
 
     @include d(575) {
       width: 248px;
-      height: 220px;
+      height: 200px;
       left: auto;
       right: 10px;
       top: 10px;
