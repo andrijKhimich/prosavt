@@ -200,9 +200,7 @@ strong {
   font-size: inherit;
 }
 
-img,
-picture,
-source {
+img {
   width: 100%;
   display: block;
 }
@@ -506,11 +504,11 @@ address {
 }
 
 .btn-login {
-  display: flex;
-  align-items: center;
   margin-right: 12px;
   color: $black;
-
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   @include rh(992) {
     &:hover {
       color: $primary;
@@ -523,8 +521,9 @@ address {
   }
 
   img {
+    // float: left;
     width: 16px;
-    margin-right: 14px;
+    margin: 5px 14px 0 0;
   }
 }
 

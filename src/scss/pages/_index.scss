@@ -51,7 +51,7 @@
     }
 
     .btn {
-      @include d(575) {
+      @include d(767) {
         margin: 0 auto;
       }
     }
@@ -158,7 +158,7 @@
     }
 
     .btn {
-      @include d(575) {
+      @include d(767) {
         margin: 30px auto 0 auto;
         display: block;
         max-width: 260px;
@@ -277,7 +277,7 @@
   &__btn {
     display: none;
 
-    @include d(575) {
+    @include d(767) {
       display: block;
       max-width: 280px;
       margin: 0 auto;
